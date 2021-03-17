@@ -1,37 +1,19 @@
-function task1() {
+function task1(h, w) {
   var out = "";
-  for (var i = 1; i <= 7; i++) {
-    for (var k = 1; k <= 7; k++) {
+  for (var i = 1; i <= h; i++) {
+    for (var k = 1; k <= w; k++) {
       out += "* ";
     }
     out += "\n";
   }
-  return out;
+  return "\n" + out;
 }
 
-function task2() {
+function task2(h) {
   var out = "";
-
-  for (var i = 1; i <= 7; i++) {
-    out += "* ";
-    for (var k = 1; k < 7 - 1; k++) {
-      if (i < 7 && i != 1) {
-        out += "  ";
-      } else {
-        out += "* ";
-      }
-    }
-    out += "* \n";
-  }
-  return out;
-}
-
-function task3() {
-  var out = "";
-  for (var i = 0; i < 7; i++) {
-    out += "* ";
-    for (var k = 6; k >= 1; k--) {
-      if (i == 0 || k == i + 1) {
+  for (var i = 1; i <=h; i++) {
+    for (var k = 1; k <= h; k++) {
+      if (i === 1 || i === h || k === 1 || k === h) {
         out += "* ";
       } else {
         out += "  ";
@@ -39,15 +21,14 @@ function task3() {
     }
     out += "\n";
   }
-  return out;
+  return "\n" + out;
 }
 
-function task4() {
+function task3(h) {
   var out = "";
-  for (var i = 0; i < 7; i++) {
-    out += "* ";
-    for (var k = 0; k <= 5; k++) {
-      if (i == 6 || k == i - 1) {
+  for (var i = 1; i <= h; i++) {
+    for (var k = h; k > 0; k--) {
+      if (k === h || i === 1 || i == k) {
         out += "* ";
       } else {
         out += "  ";
@@ -55,46 +36,14 @@ function task4() {
     }
     out += "\n";
   }
-  return out;
+  return "\n" + out;
 }
 
-function task5() {
+function task4(h) {
   var out = "";
-  for (var i = 0; i < 7; i++) {
-    for (var k = 6; k > 0; k--) {
-      if (i == 6 || k == i) {
-        out += "* ";
-      } else {
-        out += "  ";
-      }
-    }
-    out += "* ";
-    out += "\n";
-  }
-  return out;
-}
-
-function task6() {
-  var out = "";
-  for (var i = 0; i < 7; i++) {
-    for (var k = 0; k < 6; k++) {
-      if (k == i || i == 0) {
-        out += "* ";
-      } else {
-        out += "  ";
-      }
-    }
-    out += "* ";
-    out += "\n";
-  }
-  return out;
-}
-
-function task7() {
-  var out = "";
-  for (var i = 0; i < 7; i++) {
-    for (var k = 0; k < 7; k++) {
-      if (i == k || k == 6 - i) {
+  for (var i = 1; i <= h; i++) {
+    for (var k = 1; k <= h; k++) {
+      if (k === 1 || i === h || i === k) {
         out += "* ";
       } else {
         out += "  ";
@@ -102,14 +51,44 @@ function task7() {
     }
     out += "\n";
   }
-  return out;
+  return "\n" + out;
 }
 
-function task8() {
+function task5(h) {
   var out = "";
-  for (var i = 1; i < 5; i++) {
-    for (var k = 0; k < 7; k++) {
-      if (i == 1 || i == k + 1 || k == 7 - i) {
+  for (var i = 1; i <= h; i++) {
+    for (var k = h; k > 0; k--) {
+      if (k === 1|| i === h || i == k) {
+        out += "* ";
+      } else {
+        out += "  ";
+      }
+    }
+    out += "\n";
+  }
+  return "\n" + out;
+}
+
+function task6(h) {
+  var out = "";
+  for (var i = 1; i <= h; i++) {
+    for (var k = 1; k <= h; k++) {
+      if (k === h || i === 1 || i === k) {
+        out += "* ";
+      } else {
+        out += "  ";
+      }
+    }
+    out += "\n";
+  }
+  return "\n" + out;
+}
+
+function task7(h) {
+  var out = "";
+  for (var i = 0; i <= h - 1; i++) {
+    for (var k = 0, l = h - 1; k <= h, l >= 0; k++, l--) {
+      if (i == k || l == i) {
         out += "* ";
       } else {
         out += "  ";
@@ -118,14 +97,14 @@ function task8() {
 
     out += "\n";
   }
-  return out;
+  return "\n" + out;
 }
 
-function task9() {
+function task8(h) {
   var out = "";
-  for (var i = 1; i < 5; i++) {
-    for (var k = 0; k < 7; k++) {
-      if (i == 4 || k == 4 - i || i == k - 2) {
+  for (var i = 0; i <= h / 2; i++) {
+    for (var k = 0, l = h - 1; k <= h, l >= 0; k++, l--) {
+      if (i == 0 || i == k || i == l) {
         out += "* ";
       } else {
         out += "  ";
@@ -134,8 +113,21 @@ function task9() {
 
     out += "\n";
   }
-  return out;
+  return "\n" + out;
 }
 
+function task9(h) {
+  var out = "";
+  for (var i = 3; i <= h; i++) {
+    for (var k = 0, l = h - 1; k <= h, l >= 0; k++, l--) {
+      if (i === h - 1 || i === k || i === l) {
+        out += "* ";
+      } else {
+        out += "  ";
+      }
+    }
 
-console.log(task9())
+    out += "\n";
+  }
+  return "\n" + out;
+}
